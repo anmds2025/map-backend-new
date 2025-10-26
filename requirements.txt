@@ -1,6 +1,7 @@
 # Django REST Framework & JWT
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.1
+drf-yasg==1.21.8
 
 # Utilities
 python-dotenv==1.0.1
