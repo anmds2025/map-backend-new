@@ -5,3 +5,5 @@ PyYAML==6.0
 uritemplate==4.1.1
 python-dotenv==1.1.1
 psycopg2-binary==2.9.9
+Cython
+wheel
