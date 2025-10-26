@@ -1,0 +1,1 @@
+web: gunicorn safemap.wsgi:application
