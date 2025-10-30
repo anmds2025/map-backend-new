@@ -16,7 +16,6 @@ class LoginSerializer(serializers.Serializer):
     def validate(self, data):
         email = data.get('email')
         password = data.get('password')
-        print(password)
 
         try:
             user = User.objects.get(email=email)

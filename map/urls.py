@@ -6,7 +6,7 @@ from map.views.auth import login, register, logout
 from map.views.hazard_report import HazardReportViewSet
 
 router = DefaultRouter()
-router.register(r'hazard-reports', HazardReportViewSet, basename='hazardreport')
+router.register(r'reports', HazardReportViewSet, basename='hazardreport')
 
 urlpatterns = [
     path('login', login, name='login'),

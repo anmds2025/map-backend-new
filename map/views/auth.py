@@ -41,9 +41,10 @@ def login(request):
                 'refresh': str(refresh),
                 'access': str(refresh.access_token),
                 'user': {
-                    'id': user.id,
+                    'id': user.user_id,
                     'email': user.email,
                     'full_name': getattr(user, 'full_name', ''),
+                    'role': user.role
                 }
             },
             message='Login successful',
@@ -126,13 +127,14 @@ def register(request):
     user = User.objects.create(
         email=email,
         name=name,
-        password=make_password(password)
+        password=make_password(password),
+        role='User'
     )
 
     refresh = RefreshToken.for_user(user)
     return handle_response(
         data={
-            'user': {'id': user.id, 'email': user.email, 'name': user.name},
+            'user': {'id': user.user_id, 'email': user.email, 'name': user.name, 'role': user.role},
             'refresh': str(refresh),
             'access': str(refresh.access_token),
         },
